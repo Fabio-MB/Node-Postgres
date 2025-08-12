@@ -24,3 +24,10 @@ server.js: inicialização do servidor e rotas
 database-postgres.js: integração com o banco de dados
 db.js: configuração da conexão com o banco
 create-table.js: script para criação da tabela no banco
+
+
+
+Caminho do render sendo utilizado para teste do Deploy, podendo ser alterado por localhost para testes locais
+
+
+
