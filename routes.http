@@ -1,0 +1,29 @@
+POST http://localhost:3333/videos
+Content-type: application/json
+
+{
+    
+    "title" : "video node",
+    "description" : "te3232ste",
+    "duration" : 120
+
+}
+
+
+###
+
+GET http://localhost:3333/videos
+
+###
+PUT http://localhost:3333/videos/7e9acd63-fe6a-41fc-a7b4-122e043795ed
+Content-Type: application/json
+
+{
+    "title": "video editado",
+    "description": "teste editado",
+    "duration": 140
+}
+
+
+###
+DELETE  http://localhost:3333/videos/7e9acd63-fe6a-41fc-a7b4-122e043795ed
