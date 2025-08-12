@@ -48,23 +48,30 @@ server.put('/videos/:id', async (request, reply) => {
         description,
         duration
     })
-    return reply.status(204)
-
+    return reply.status(204).send()
 })
 
 server.delete('/videos/:id', async (request, reply) => {
-    const videoID= request.params.id
+    const videoID = request.params.id
 
-    database.delete(videoID)
+    await database.delete(videoID)
     return reply.status(204).send()
 })
 
 
 
 
+const start = async () => {
+    try {
+        await server.listen({
+            host: '0.0.0.0',
+            port: process.env.PORT ?? 3333,
+        })
+        console.log('Server running!')
+    } catch (err) {
+        server.log.error(err)
+        process.exit(1)
+    }
+}
 
-
-server.listen({
-    host: '0.0.0.0',
-    port: process.env.PORT ?? 3333,
-})
+start()
